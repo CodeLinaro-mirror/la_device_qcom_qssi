@@ -133,6 +133,7 @@ BUILD_BROKEN_USES_BUILD_HOST_STATIC_LIBRARY := true
 #Enable VNDK Compliance
 BOARD_VNDK_VERSION:=current
 RECOVERY_SNAPSHOT_VERSION := current
+RAMDISK_SNAPSHOT_VERSION := current
 Q_BU_DISABLE_MODULE := true
 
 ###### Dynamic Partition Handling ####
@@ -172,5 +173,8 @@ include device/qcom/sepolicy/SEPolicy.mk
 
 DIRECTED_VENDOR_SNAPSHOT := true
 DIRECTED_RECOVERY_SNAPSHOT := true
+DIRECTED_RAMDISK_SNAPSHOT := true
+
 include device/qcom/qssi/vendor_snapshot_modules.mk
 include device/qcom/qssi/recovery_snapshot_modules.mk
+include device/qcom/qssi/ramdisk_snapshot_modules.mk
