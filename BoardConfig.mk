@@ -175,6 +175,4 @@ DIRECTED_VENDOR_SNAPSHOT := true
 DIRECTED_RECOVERY_SNAPSHOT := true
 DIRECTED_RAMDISK_SNAPSHOT := true
 
-include device/qcom/qssi/vendor_snapshot_modules.mk
-include device/qcom/qssi/recovery_snapshot_modules.mk
-include device/qcom/qssi/ramdisk_snapshot_modules.mk
+-include vendor/qcom/vsdk-configs/snapshot_modules/*/*.mk
