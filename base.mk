@@ -194,6 +194,7 @@ TINY_ALSA_TEST_APPS += tinycap
 TINY_ALSA_TEST_APPS += tinymix
 TINY_ALSA_TEST_APPS += tinypcminfo
 TINY_ALSA_TEST_APPS += cplay
+TINY_ALSA_TEST_APPS += tinyhostless
 
 #AMPLOADER
 AMPLOADER := amploader
