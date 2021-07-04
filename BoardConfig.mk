@@ -3,13 +3,12 @@
 # Product-specific compile-time definitions.
 #
 
-ALLOW_MISSING_DEPENDENCIES := true
 
 TARGET_BOARD_PLATFORM := msmnile
 TARGET_BOOTLOADER_BOARD_NAME := msmnile
 
 TARGET_ARCH := arm64
-TARGET_ARCH_VARIANT := armv8-a
+TARGET_ARCH_VARIANT := armv8-a-branchprot
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := generic
@@ -131,6 +130,8 @@ BUILD_BROKEN_USES_BUILD_HOST_STATIC_LIBRARY := true
 
 #Enable VNDK Compliance
 BOARD_VNDK_VERSION:=current
+RECOVERY_SNAPSHOT_VERSION := current
+RAMDISK_SNAPSHOT_VERSION := current
 Q_BU_DISABLE_MODULE := true
 
 ###### Dynamic Partition Handling ####
@@ -159,6 +160,11 @@ AB_OTA_PARTITIONS ?= system system_ext product vbmeta_system
 endif
 endif
 ###### Dynamic Partition Handling ####
+
+DIRECTED_VENDOR_SNAPSHOT := true
+DIRECTED_RECOVERY_SNAPSHOT := true
+DIRECTED_RAMDISK_SNAPSHOT := true
+-include vendor/qcom/vsdk-configs/snapshot_modules/*/*.mk
 
 #################################################################################
 # This is the End of BoardConfig.mk file.
