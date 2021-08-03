@@ -116,7 +116,7 @@ TARGET_USES_INTERACTION_BOOST := true
 TARGET_ENABLE_MEDIADRM_64 := true
 
 ifeq ($(ENABLE_VENDOR_IMAGE), false)
-	$(error "Vendor Image is mandatory !!")
+    $(error "Vendor Image is mandatory !!")
 endif
 
 BUILD_BROKEN_DUP_RULES := true
@@ -132,6 +132,8 @@ BUILD_BROKEN_USES_BUILD_HOST_STATIC_LIBRARY := true
 
 #Enable VNDK Compliance
 BOARD_VNDK_VERSION:=current
+RECOVERY_SNAPSHOT_VERSION := current
+RAMDISK_SNAPSHOT_VERSION := current
 Q_BU_DISABLE_MODULE := true
 
 ###### Dynamic Partition Handling ####
@@ -168,3 +170,9 @@ endif
 -include vendor/qcom/defs/board-defs/system/*.mk
 #################################################################################
 include device/qcom/sepolicy/SEPolicy.mk
+
+DIRECTED_VENDOR_SNAPSHOT := true
+DIRECTED_RECOVERY_SNAPSHOT := true
+DIRECTED_RAMDISK_SNAPSHOT := true
+
+-include vendor/qcom/vsdk-configs/snapshot_modules/*/*.mk
