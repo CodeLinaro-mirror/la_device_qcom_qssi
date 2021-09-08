@@ -82,3 +82,5 @@ $(shell  mkdir -p $(TARGET_OUT_VENDOR)/firmware)
 ifneq (, $(wildcard $(SOURCE_ROOT)/prebuilts/build-tools/linux-x86/bin/make))
    MAKE := $(SOURCE_ROOT)/prebuilts/build-tools/linux-x86/bin/$(MAKE)
 endif
+
+-include vendor/qcom/configs/scripts/Android.mk

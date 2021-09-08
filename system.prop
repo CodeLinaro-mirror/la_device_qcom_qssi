@@ -39,7 +39,6 @@ media.stagefright.enable-scan=true
 media.stagefright.thumbnail.prefer_hw_codecs=true
 mmp.enable.3g2=true
 media.aac_51_output_enabled=true
-mm.enable.smoothstreaming=true
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 #16777215 is decimal sum of supported codecs in AAL
 #codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE DSD MOV MHAS
@@ -164,3 +163,6 @@ ro.media.recorder-max-base-layer-fps = 60
 ro.charger.enable_suspend = 1
 #Disable MTE Async for system server
 arm64.memtag.process.system_server=off
+
+# Disable blur on app launch
+ro.launcher.blur.appLaunch=0
