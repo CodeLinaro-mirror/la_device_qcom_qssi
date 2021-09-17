@@ -3,10 +3,6 @@
 # Product-specific compile-time definitions.
 #
 
-
-TARGET_BOARD_PLATFORM := qssi
-TARGET_BOOTLOADER_BOARD_NAME := qssi
-
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a-branchprot
 TARGET_CPU_ABI := arm64-v8a
@@ -161,10 +157,15 @@ endif
 endif
 ###### Dynamic Partition Handling ####
 
+# Use sha256 for dm-verity partitions
+BOARD_AVB_SYSTEM_ADD_HASHTREE_FOOTER_ARGS += --hash_algorithm sha256
+BOARD_AVB_SYSTEM_EXT_ADD_HASHTREE_FOOTER_ARGS += --hash_algorithm sha256
+BOARD_AVB_PRODUCT_ADD_HASHTREE_FOOTER_ARGS += --hash_algorithm sha256
+
 DIRECTED_VENDOR_SNAPSHOT := true
 DIRECTED_RECOVERY_SNAPSHOT := true
 DIRECTED_RAMDISK_SNAPSHOT := true
--include vendor/qcom/vsdk-configs/snapshot_modules/*/*.mk
+-include vendor/qcom/configs/snapshot_modules/*/*.mk
 
 #################################################################################
 # This is the End of BoardConfig.mk file.
