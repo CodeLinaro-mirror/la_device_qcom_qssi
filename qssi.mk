@@ -41,7 +41,7 @@ BOARD_AVB_ENABLE := true
 
 # Retain the earlier default behavior i.e. ota config (dynamic partition was disabled if not set explicitly), so set
 # SHIPPING_API_LEVEL to 28 if it was not set earlier (this is generally set earlier via build.sh per-target)
-SHIPPING_API_LEVEL := 30
+SHIPPING_API_LEVEL := 31
 
 $(call inherit-product-if-exists, vendor/qcom/defs/product-defs/system/cne_url*.mk)
 
@@ -80,6 +80,8 @@ endif
 #### Dynamic Partition Handling
 
 PRODUCT_SOONG_NAMESPACES += \
+    frameworks/base/boot \
+    cts/tests/signature/api-check \
     hardware/google/av \
     hardware/google/interfaces
 
@@ -212,6 +214,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.qfp=true
 
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.device_config.runtime_native_boot.iorap_perfetto_enable=true
 
 # USB default HAL
 PRODUCT_PACKAGES += \
