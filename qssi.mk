@@ -80,6 +80,8 @@ endif
 #### Dynamic Partition Handling
 
 PRODUCT_SOONG_NAMESPACES += \
+    frameworks/base/boot \
+    cts/tests/signature/api-check \
     hardware/google/av \
     hardware/google/interfaces
 
@@ -212,6 +214,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.qfp=true
 
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.device_config.runtime_native_boot.iorap_perfetto_enable=true
 
 # USB default HAL
 PRODUCT_PACKAGES += \
