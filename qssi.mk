@@ -41,7 +41,7 @@ BOARD_AVB_ENABLE := true
 
 # Retain the earlier default behavior i.e. ota config (dynamic partition was disabled if not set explicitly), so set
 # SHIPPING_API_LEVEL to 28 if it was not set earlier (this is generally set earlier via build.sh per-target)
-SHIPPING_API_LEVEL := 31
+SHIPPING_API_LEVEL := 32
 
 $(call inherit-product-if-exists, vendor/qcom/defs/product-defs/system/cne_url*.mk)
 
@@ -113,7 +113,7 @@ PRODUCT_DEVICE := $(VENDOR_QTI_DEVICE)
 PRODUCT_BRAND := qti
 PRODUCT_MODEL := qssi system image for arm64
 
-PRODUCT_EXTRA_VNDK_VERSIONS := 30
+PRODUCT_EXTRA_VNDK_VERSIONS := 30 31
 
 #Initial bringup flags
 TARGET_USES_AOSP := false
