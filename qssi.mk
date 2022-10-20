@@ -277,6 +277,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += candump
 PRODUCT_PACKAGES += cansend
 
+#Enable TwoWheeler apps
+PRODUCT_PACKAGES += TwoWheelerLauncher \
+    TwoWheelerSystemUI
+
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE:=true
 
 
