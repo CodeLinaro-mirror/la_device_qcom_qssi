@@ -263,6 +263,11 @@ endif
 #Enable vndk-sp Libraries
 PRODUCT_PACKAGES += vndk_package
 
+#TwoWheeler: Initialize CAN
+PRODUCT_PACKAGES += \
+    init.cancfg.sh \
+    init.caninit.rc
+
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE:=true
 
 
