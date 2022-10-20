@@ -300,6 +300,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Some CTS test case failed after enabling feature config_stopSystemPackagesByDefault
 PRODUCT_PACKAGES += initial-package-stopped-states-aosp.xml
 
+# Call vendor vehicle hal makefile
+$(call inherit-product-if-exists, vendor/vehicle/twowheeler/hardware/interfaces/property/vehicle-hal.mk)
+
 ###################################################################################
 # This is the End of target.mk file.
 # Now, Pickup other split product.mk files:
