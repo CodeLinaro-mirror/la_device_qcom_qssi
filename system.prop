@@ -103,7 +103,9 @@ persist.data.df.dev_name=rmnet_usb0
 persist.debug.wfd.enable=1
 ##property to choose between virtual/external wfd display
 persist.sys.wfd.virtual=0
-
+#property to enable WHD support if
+#primary diplay of source device is HDMI display
+persist.sys.wfd.source.hdmi.enable=true
 
 #property to enable HWC for VDS
 debug.sf.enable_hwc_vds=1
