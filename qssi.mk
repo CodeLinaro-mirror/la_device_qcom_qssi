@@ -262,6 +262,10 @@ PRODUCT_PACKAGES += \
     init.cancfg.sh \
     init.caninit.rc
 
+# CAN test tools
+PRODUCT_PACKAGES += candump
+PRODUCT_PACKAGES += cansend
+
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE:=true
 
 
