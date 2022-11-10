@@ -292,6 +292,9 @@ ifeq (true,$(call math_gt_or_eq,$(SHIPPING_API_LEVEL),29))
   PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := true
 endif
 
+# Call vendor vehicle hal makefile
+$(call inherit-product-if-exists, vendor/vehicle/twowheeler/hardware/interfaces/property/vehicle-hal.mk)
+
 ###################################################################################
 # This is the End of target.mk file.
 # Now, Pickup other split product.mk files:
