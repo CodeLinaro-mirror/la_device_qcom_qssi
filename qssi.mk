@@ -297,7 +297,11 @@ ifeq (true,$(call math_gt_or_eq,$(SHIPPING_API_LEVEL),29))
 endif
 
 # Call vendor vehicle hal makefile
-$(call inherit-product-if-exists, vendor/vehicle/twowheeler/hardware/interfaces/property/vehicle-hal.mk)
+PRODUCT_PACKAGES += \
+    vendor.vehicle.twowheeler@1.0 \
+    vendor.vehicle.twowheeler@1.0-java \
+    vendor.vehicle.twowheeler@1.0-service \
+    vendor.vehicle.twowheeler@1.0-impl
 
 ###################################################################################
 # This is the End of target.mk file.
