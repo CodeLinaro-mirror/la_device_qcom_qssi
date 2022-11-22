@@ -266,6 +266,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += candump
 PRODUCT_PACKAGES += cansend
 
+# TwoWheeler: Mock location
+PRODUCT_COPY_FILES += \
+    device/qcom/qssi/mock_location_data.json:system/etc/mock_location_data.json
+
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE:=true
 
 
