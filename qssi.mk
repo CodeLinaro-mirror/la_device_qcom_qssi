@@ -270,6 +270,10 @@ PRODUCT_PACKAGES += cansend
 PRODUCT_COPY_FILES += \
     device/qcom/qssi/mock_location_data.json:system/etc/mock_location_data.json
 
+#Enable TwoWheeler apps
+PRODUCT_PACKAGES += TwoWheelerLauncher \
+    TwoWheelerSystemUI
+
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE:=true
 
 
