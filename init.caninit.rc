@@ -3,3 +3,24 @@
 
 on property:sys.boot_completed=1
     exec u:r:init_cancfg_sh:s0 -- /system/bin/init.cancfg.sh
+
+on property:persist.sys.cansimulation=true
+    start init_cansimsrv
+
+on property:persist.sys.cansimulation=false
+    stop init_cansimsrv
+    start init_cansimsrv2
+
+service init_cansimsrv /system/bin/start_cansimulator.sh
+    class core
+    user root
+    group root system shell
+    disabled
+    oneshot
+
+service init_cansimsrv2 /system/bin/stop_cansimulator.sh
+    class core
+    user root
+    group root system shell
+    disabled
+    oneshot
