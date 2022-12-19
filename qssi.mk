@@ -116,6 +116,8 @@ TARGET_USES_RRO := true
 
 TARGET_USES_NQ_NFC := true
 
+#enable LOW_RAM flag
+TARGET_HAS_LOW_RAM := true
 
 # default is nosdcard, S/W button enabled in resource
 PRODUCT_CHARACTERISTICS := nosdcard
