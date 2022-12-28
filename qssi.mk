@@ -89,6 +89,9 @@ TARGET_USES_NEW_ION := true
 
 ENABLE_AB ?= true
 
+# Inherit common Android Go defaults.
+$(call inherit-product, build/make/target/product/go_defaults_common.mk)
+
 TARGET_DEFINES_DALVIK_HEAP := true
 $(call inherit-product, device/qcom/qssi/common64.mk)
 
