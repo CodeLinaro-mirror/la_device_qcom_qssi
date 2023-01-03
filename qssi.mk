@@ -78,6 +78,9 @@ PRODUCT_SOONG_NAMESPACES += \
 VENDOR_QTI_PLATFORM := msmnile
 VENDOR_QTI_DEVICE := qssi
 
+#enble NO_TELEPHONY
+TARGET_NO_TELEPHONY := true
+
 #QSSI configuration
 #Single system image project structure
 TARGET_USES_QSSI := true
