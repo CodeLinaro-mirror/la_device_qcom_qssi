@@ -122,7 +122,8 @@ TARGET_USES_NQ_NFC := true
 #enable LOW_RAM flag
 TARGET_HAS_LOW_RAM := true
 
-PRODUCT_PACKAGES += Launcher3Go
+PRODUCT_PACKAGES += Launcher3Go \
+	SnapdragonMusic
 
 # default is nosdcard, S/W button enabled in resource
 PRODUCT_CHARACTERISTICS := nosdcard
