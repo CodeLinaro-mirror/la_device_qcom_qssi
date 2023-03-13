@@ -6,7 +6,12 @@ $(call inherit-product, device/qcom/qssi/base.mk)
 $(call inherit-product-if-exists, $(QCPATH)/common/config/device-vendor-qssi.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
-$(call inherit-product, packages/services/Car/car_product/build/car.mk)
+
+ifeq ($(TARGET_BUILD_2W), true)
+    $(call inherit-product, vendor/qcom/opensource/commonsys/twowheeler/services/bike_product/build/bike.mk)
+else
+    $(call inherit-product, packages/services/Car/car_product/build/car.mk)
+endif #TARGET_BUILD_2W
 
 PRODUCT_BRAND := qcom
 PRODUCT_AAPT_CONFIG += hdpi mdpi
