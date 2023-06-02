@@ -89,6 +89,10 @@ TARGET_PD_SERVICE_ENABLED := true
 #Enable peripheral manager
 TARGET_PER_MGR_ENABLED := true
 
+ifeq ($(TARGET_BUILD_2W),true)
+    WITH_DEXPREOPT := true
+endif
+
 # Enable dex pre-opt to speed up initial boot
 ifeq ($(HOST_OS),linux)
     ifeq ($(WITH_DEXPREOPT),)
@@ -102,7 +106,11 @@ ifeq ($(HOST_OS),linux)
 endif
 
 # Enable sensor multi HAL
-USE_SENSOR_MULTI_HAL := true
+ifneq ($(TARGET_BUILD_2W),true)
+     USE_SENSOR_MULTI_HAL := true
+else
+     USE_SENSOR_MULTI_HAL := false
+endif
 
 #Enable INTERACTION_BOOST
 TARGET_USES_INTERACTION_BOOST := true
