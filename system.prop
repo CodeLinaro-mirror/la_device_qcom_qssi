@@ -46,6 +46,8 @@ media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 vendor.mm.enable.qcom_parser=16777215
 persist.mm.enable.prefetch=true
 
+#system property for disable sms in CPMS
+persist.radio.cpms.sms.disabled=false
 
 #
 # system props for the data modules
