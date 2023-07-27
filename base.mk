@@ -677,6 +677,7 @@ PRODUCT_PACKAGES := \
     Camera \
     CertInstaller \
     DrmProvider \
+    Gallery2 \
     LatinIME \
     netutils-wrapper-1.0 \
     Settings \
@@ -695,7 +696,6 @@ PRODUCT_PACKAGES := \
     Calculator \
     Calendar \
     Email \
-    Gallery2 \
     Music \
     Provision \
     Protips \
