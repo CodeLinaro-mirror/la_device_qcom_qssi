@@ -45,6 +45,7 @@ AB_OTA_UPDATER := true
 # in the full set mentioned above as part of your make commandline
 TARGET_NO_RECOVERY := true
 else
+OTA_UPDATER := true
 TARGET_NO_RECOVERY := true
 # Enable System As Root even for non-A/B
 # Add the below cache settings for /cache mountpoint, although we don't need the resultant cache image
