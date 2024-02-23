@@ -1,8 +1,9 @@
 # Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-on init
+on early-init
     exec u:r:init_cancfg_sh:s0 -- /system/bin/init.cancfg.sh
+    write /sys/kernel/boot_kpi/kpi_values "K - early init: CAN interface ready"
 
 on property:persist.sys.cansimulation=true
     start init_cansimsrv
