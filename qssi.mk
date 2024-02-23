@@ -1,6 +1,9 @@
 #For QSSI, we build only the system image. Here we explicitly set the images
 #we build so there is no confusion.
 
+#Call Twowheeler mk to set flags & copy etc files needed
+-include $(TOPDIR)device/qcom/qssi/twowheeler.mk
+
 TARGET_BOARD_PLATFORM := qssi
 TARGET_BOOTLOADER_BOARD_NAME := qssi
 
