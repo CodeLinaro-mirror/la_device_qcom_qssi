@@ -266,7 +266,9 @@ PRODUCT_PACKAGES += vndk_package
 #TwoWheeler: Initialize CAN
 PRODUCT_PACKAGES += \
     init.cancfg.sh \
-    init.caninit.rc
+    init.caninit.rc \
+    start_cansimulator.sh \
+    stop_cansimulator.sh
 
 # CAN test tools
 PRODUCT_PACKAGES += candump
