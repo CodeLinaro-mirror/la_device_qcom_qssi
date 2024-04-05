@@ -134,7 +134,7 @@ config.disable_rtt=true
 persist.sys.force_sw_gles=1
 persist.vendor.radio.atfwd.start=true
 ro.kernel.qemu.gles=0
-qemu.hw.mainkeys=0
+qemu.hw.mainkeys=1
 
 #Expose aux camera for below packages
 vendor.camera.aux.packagelist=org.codeaurora.snapcam
@@ -167,3 +167,6 @@ arm64.memtag.process.system_server=off
 
 # Disable blur on app launch
 ro.launcher.blur.appLaunch=0
+
+#Disable Decorations
+debug.disable_screen_decorations=true
