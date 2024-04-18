@@ -8,6 +8,9 @@ PRODUCT_COPY_FILES += \
     device/qcom/qssi/android.hardware.vehicle.bike.xml:system/etc/permissions/android.hardware.vehicle.bike.xml
 
 #Enable TwoWheeler apps
-PRODUCT_PACKAGES += TwoWheelerLauncher \
-    TwoWheelerSystemUI
+PRODUCT_PACKAGES += \
+    TwoWheelerLauncher \
+    TwoWheelerSystemUI \
+    ECall \
+    SecondaryBluetooth
 
