@@ -4,6 +4,10 @@ TARGET_BUILD_2W := true
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.hw.vehicle.isbike=true
 
+#system prop for Hardware type Automotive
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.hardware.type=automotive
+
 PRODUCT_COPY_FILES += \
     device/qcom/qssi/android.hardware.vehicle.bike.xml:system/etc/permissions/android.hardware.vehicle.bike.xml
 
