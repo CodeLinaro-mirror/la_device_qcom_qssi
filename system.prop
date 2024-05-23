@@ -170,3 +170,7 @@ ro.launcher.blur.appLaunch=0
 
 #Disable Decorations
 debug.disable_screen_decorations=true
+
+#Bootanim exit flag
+debug.bootanimxr.exit=0 
+
