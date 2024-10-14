@@ -47,7 +47,6 @@
     <hidden-api-whitelisted-app package="com.qualcomm.uimremoteserver" />
     <hidden-api-whitelisted-app package="com.qualcomm.uimremoteclient" />
     <hidden-api-whitelisted-app package="com.qualcomm.atfwd" />
-    <hidden-api-whitelisted-app package="com.qualcomm.qti.callfeaturessetting" />
     <hidden-api-whitelisted-app package="com.qualcomm.qti.confdialer" />
     <hidden-api-whitelisted-app package="org.codeaurora.dialer" />
     <hidden-api-whitelisted-app package="com.qti.qualcomm.datastatusnotification" />
