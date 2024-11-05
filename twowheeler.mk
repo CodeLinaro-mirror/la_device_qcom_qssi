@@ -17,5 +17,6 @@ PRODUCT_PACKAGES += \
     TwoWheelerLauncher \
     TwoWheelerSystemUI \
     ECall \
-    SecondaryBluetooth
+    SecondaryBluetooth \
+    MqttListener
 
