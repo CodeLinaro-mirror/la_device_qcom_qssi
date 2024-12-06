@@ -308,7 +308,10 @@ ifeq (true,$(call math_gt_or_eq,$(SHIPPING_API_LEVEL),29))
 endif
 
 # Enable support for APEX updates
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+# Disable support for APEX updates for 2w
+ifneq ($(TARGET_BUILD_2W),true)
+  $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+endif
 
 # Enable allowlist for some aosp packages that should not be scanned in a "stopped" state
 # Some CTS test case failed after enabling feature config_stopSystemPackagesByDefault
