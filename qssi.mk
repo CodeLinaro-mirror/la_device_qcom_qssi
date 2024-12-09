@@ -133,6 +133,7 @@ TARGET_USES_NQ_NFC := true
 PRODUCT_CHARACTERISTICS := nosdcard
 BOARD_FRP_PARTITION_NAME := frp
 
+PRODUCT_PACKAGES += qspa_system.rc qspa_default.rc
 #Android EGL implementation
 PRODUCT_PACKAGES += libGLES_android
 
@@ -284,6 +285,10 @@ ifeq (true,$(call math_gt_or_eq,$(SHIPPING_API_LEVEL),29))
   PRODUCT_ARTIFACT_PATH_REQUIREMENT_IGNORE_PATHS := /system/system_ext/
   PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := true
 endif
+
+# b/344511668
+PRODUCT_PACKAGES += \
+    android.software.credentials.prebuilt.xml
 
 # Enable allowlist for several aosp packages that should not be scanned in a "stopped" state
 # Some CTS test case failed after enabling feature config_stopSystemPackagesByDefault
