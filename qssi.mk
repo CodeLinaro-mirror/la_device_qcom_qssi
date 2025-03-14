@@ -11,6 +11,7 @@ PRODUCT_MAX_PAGE_SIZE_SUPPORTED := 4096
 PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
 
 RELAX_USES_LIBRARY_CHECK := true
+NEED_AIDL_NDK_PLATFORM_BACKEND := true
 
 #Enable product partition Java I/F. It is automatically set to true if
 #the shipping API level for the target is greater than 29
