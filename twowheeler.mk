@@ -1,6 +1,9 @@
 #Include all 2W changes here
 TARGET_BUILD_2W := true
 
+# device support B2C
+TARGET_SUPPORT_B2C := false
+
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.hw.vehicle.isbike=true
 
@@ -22,6 +25,10 @@ PRODUCT_PACKAGES += \
     TwoWheelerLauncher \
     TwoWheelerSystemUI \
     ECall \
-    SecondaryBluetooth \
-    MqttListener
+    SecondaryBluetooth
+
+# Enable MqttListener if device support B2C
+ifeq ($(TARGET_SUPPORT_B2C), true)
+    PRODUCT_PACKAGES += MqttListener
+endif
 
