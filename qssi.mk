@@ -318,8 +318,6 @@ PRODUCT_PACKAGES += \
     vendor.vehicle.twowheeler@1.0-service \
     vendor.vehicle.twowheeler@1.0-impl
 
-PRODUCT_PACKAGES += MqttListener
-
 ###################################################################################
 # This is the End of target.mk file.
 # Now, Pickup other split product.mk files:

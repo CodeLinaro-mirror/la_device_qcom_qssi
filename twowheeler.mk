@@ -3,6 +3,14 @@ TARGET_BUILD_2W := true
 # set this to true if building car svcs instead of bike svcs
 USE_CAR_SVCS_FOR_2W := true
 
+# device support B2C
+TARGET_SUPPORT_B2C := false
+
+# Enable MqttListener if device support B2C
+ifeq ($(TARGET_SUPPORT_B2C), true)
+    PRODUCT_PACKAGES += MqttListener
+endif
+
 # this prop is used in SystemServer and RCS etc to turn off
 # features from cpp/java code
 PRODUCT_SYSTEM_PROPERTIES += \
