@@ -111,7 +111,7 @@ TINY_ALSA_TEST_APPS := tinyplay
 TINY_ALSA_TEST_APPS += tinycap
 TINY_ALSA_TEST_APPS += tinymix
 TINY_ALSA_TEST_APPS += tinypcminfo
-# TINY_ALSA_TEST_APPS += cplay
+#TINY_ALSA_TEST_APPS += cplay
 
 #AMPLOADER
 AMPLOADER := amploader
@@ -915,7 +915,7 @@ SOONG_CONFIG_bredr_vs_btadva += bredr_or_btadva
 
 ifneq "$(wildcard vendor/qcom/proprietary/commonsys/bt/bt_adv_audio)" ""
     $(warning bt_adv_audio dir is present)
-    SOONG_CONFIG_bredr_vs_btadva_bredr_or_btadva := bredr 
+    SOONG_CONFIG_bredr_vs_btadva_bredr_or_btadva := bredr
 else
     $(warning bt_adv_audio dir is not present)
     SOONG_CONFIG_bredr_vs_btadva_bredr_or_btadva := bredr
