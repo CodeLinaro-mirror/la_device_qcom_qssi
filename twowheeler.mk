@@ -13,9 +13,6 @@ PRODUCT_SYSTEM_PROPERTIES += \
     sys.no_kill_cached_proc_post_boot_completed_duration_millis=0 \
     persist.sys.device.mode = peripheral
 
-PRODUCT_COPY_FILES += \
-    device/qcom/qssi/android.hardware.vehicle.bike.xml:system/etc/permissions/android.hardware.vehicle.bike.xml
-
 # broadcast radio feature
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.broadcastradio.xml:system/etc/permissions/android.hardware.broadcastradio.xml
