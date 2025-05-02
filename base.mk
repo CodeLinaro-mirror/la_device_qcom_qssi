@@ -669,6 +669,8 @@ FD_LEAK := libc_leak_detector
 
 PRODUCT_PACKAGES := \
     AccountAndSyncSettings \
+    Calendar \
+    CalendarProvider \
     Camera \
     CertInstaller \
     DrmProvider \
@@ -689,14 +691,12 @@ PRODUCT_PACKAGES := \
     DeskClock \
     AlarmProvider \
     Calculator \
-    Calendar \
     Email \
     Music \
     Provision \
     Protips \
     QuickSearchBox \
     SoundRecorder \
-    CalendarProvider \
     SnapdragonGallery \
     VideoEditor \
     SnapdragonLauncher \
