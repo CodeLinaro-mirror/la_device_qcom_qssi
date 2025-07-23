@@ -29,3 +29,7 @@ ifeq ($(TARGET_SUPPORT_B2C), true)
     PRODUCT_PACKAGES += MqttListener
 endif
 
+ifeq ($(TARGET_BUILD_2W), true)
+PRODUCT_COPY_FILES += \
+    vendor/qcom/opensource/core-utils/qspaframework/qspa_default.rc:system_ext/etc/init/qspa_default.rc
+endif
