@@ -21,12 +21,16 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     TwoWheelerLauncher \
     TwoWheelerSystemUI \
-    ECall \
     SecondaryBluetooth
 
 # Enable MqttListener if device support B2C
 ifeq ($(TARGET_SUPPORT_B2C), true)
     PRODUCT_PACKAGES += MqttListener
+endif
+
+# Build ECall app only if telephony enabled
+ifneq ($(TARGET_NO_TELEPHONY), true)
+    PRODUCT_PACKAGES += ECall
 endif
 
 ifeq ($(TARGET_BUILD_2W), true)
