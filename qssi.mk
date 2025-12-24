@@ -135,7 +135,6 @@ BOARD_FRP_PARTITION_NAME := frp
 
 PRODUCT_PACKAGES += qspa_system.rc qspa_default.rc
 
-PRODUCT_PACKAGES += mk_loop
 #Android EGL implementation
 PRODUCT_PACKAGES += libGLES_android
 
