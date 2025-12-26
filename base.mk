@@ -696,7 +696,11 @@ PRODUCT_PACKAGES := \
     VideoEditor \
     SnapdragonLauncher \
     FrameworksUtilsSysService \
-    libqesdk_ndk_platform.qti
+    libqesdk_ndk_platform.qti \
+    frameworks_utils_service.sh \
+    frameworks_utils_service.rc \
+    libfwk_lazy_service
+
 
 ifeq ($(TARGET_HAS_LOW_RAM),true)
     DELAUN := Launcher3Go
