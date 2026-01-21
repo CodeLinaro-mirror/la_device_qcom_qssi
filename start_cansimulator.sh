@@ -12,7 +12,13 @@ side_stand=0
 
 sleep_time=1
 
-ip link set can0 up type can bitrate 50000
+CAN_INTERFACE=$(getprop ro.boot.can_interface)
+
+if [ "$CAN_INTERFACE" = "uart_and_spi" ]; then
+    ip link set can2 up type can bitrate 50000
+else
+    ip link set can0 up type can bitrate 50000
+if
 
 ## EV type set
 cansend can0 7F1#0A
