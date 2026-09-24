@@ -71,7 +71,7 @@ PRODUCT_BUILD_SYSTEM_EXT_IMAGE := true
 PRODUCT_BUILD_PRODUCT_IMAGE := true
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_BUILD_RAMDISK_IMAGE := true
-BOARD_AVB_VBMETA_SYSTEM := system system_ext product
+BOARD_AVB_VBMETA_SYSTEM := system system_ext product init_boot
 BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
 BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA2048
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
@@ -276,16 +276,19 @@ else
 AUDIO_FEATURE_ENABLED_DLKM := false
 endif
 
-# Enable virtual A/B compression
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/android_t_baseline.mk)
-PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := gz
-
 # Include mainline components and QSSI whitelist
 ifeq (true,$(call math_gt_or_eq,$(SHIPPING_API_LEVEL),29))
   $(call inherit-product, device/qcom/qssi/qssi_whitelist.mk)
   PRODUCT_ARTIFACT_PATH_REQUIREMENT_IGNORE_PATHS := /system/system_ext/
-  PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := true
+  PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := relaxed
 endif
+
+# Include generic_ramdisk.mk to package snapuserd in generic ramdisk
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
+
+# Enable virtual A/B compression
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
+PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
 
 # b/344511668
 PRODUCT_PACKAGES += \

@@ -27,6 +27,11 @@ TARGET_NO_BOOTLOADER := true
 TARGET_USES_UEFI := true
 TARGET_NO_KERNEL := true
 
+# Specify generic ramdisk compression format
+BOARD_RAMDISK_USE_LZ4 := true
+# Specify pagesize used for layout/padding of init_boot image
+BOARD_INIT_BOOT_IMAGE_PAGESIZE := 4096
+
 # Disable DLKMs compilation for lunch qssi builds.
 TARGET_KERNEL_DLKM_DISABLE := true
 
@@ -53,6 +58,14 @@ TARGET_NO_RECOVERY := true
 BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 endif
+
+# Setting this variable enables compilation of init_boot image. Generic ramdisk will be
+# built in this image and installed in init_boot partition instead of boot partition.
+BOARD_INIT_BOOT_IMAGE_PARTITION_SIZE := 0x00800000
+
+# Specify init boot header version
+BOARD_INIT_BOOT_HEADER_VERSION := 4
+BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
 
 # Define BOARD_USES_METADATA_PARTITION to create metadata mount point in system image
 BOARD_USES_METADATA_PARTITION := true
@@ -153,7 +166,7 @@ BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext product
 BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 6438256640
 BOARD_EXT4_SHARE_DUP_BLOCKS := true
 ifeq ($(ENABLE_AB), true)
-AB_OTA_PARTITIONS ?= system system_ext product vbmeta_system
+AB_OTA_PARTITIONS ?= system system_ext product vbmeta_system init_boot
 endif
 endif
 ###### Dynamic Partition Handling ####
